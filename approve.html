@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Approval - Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="approve.css">
+</head>
+<body>
+    <div class="approve-container">
+        <nav class="admin-nav">
+            <div class="nav-header">
+                <h2>File Approval</h2>
+                <div class="nav-stats">
+                    <span id="pendingCount">Pending Files: 0</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="admin.html" class="nav-button">
+                    <span class="button-icon">⚙️</span>
+                    Admin Panel
+                </a>
+                <a href="index.html" class="nav-button">
+                    <span class="button-icon">🖼️</span>
+                    Gallery
+                </a>
+                <button id="logoutBtn" class="nav-button logout-button">
+                    <span class="button-icon">↪</span>
+                    Logout
+                </button>
+            </div>
+        </nav>
+        
+        <div class="approve-content">
+            <div class="approve-header">
+                <h3>Pending Approvals</h3>
+                <span class="section-description">Review and approve submitted files</span>
+            </div>
+            <div id="pendingFiles" class="pending-files">
+                <!-- Files will be loaded here -->
+            </div>
+            <div id="noFiles" class="no-files-message" style="display: none;">
+                <div class="message-icon">📭</div>
+                <h3>No Pending Files</h3>
+                <p>All submitted files have been reviewed</p>
+            </div>
+        </div>
+    </div>
+    <script src="approve.js"></script>
+</body>
+</html> 

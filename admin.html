@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <div class="nav-header">
+                <h2>Admin Panel</h2>
+            </div>
+            <div class="nav-links">
+                <a href="approve.html" class="nav-button approval-button">
+                    <span class="button-icon">✓</span>
+                    Pending Approvals
+                </a>
+                <a href="index.html" class="nav-button">
+                    <span class="button-icon">🖼️</span>
+                    Gallery
+                </a>
+                <button id="logoutBtn" class="nav-button logout-button">
+                    <span class="button-icon">↪</span>
+                    Logout
+                </button>
+            </div>
+        </nav>
+        
+        <div class="admin-content">
+            <!-- File Upload Section -->
+            <div class="admin-section upload-section">
+                <div class="section-header">
+                    <h3>Upload Files</h3>
+                    <span class="section-description">Upload new files directly to gallery</span>
+                </div>
+                <form id="uploadForm" class="upload-form">
+                    <div class="upload-area" id="dropZone">
+                        <input type="file" id="fileInput" multiple accept="image/*,video/*" style="display: none;">
+                        <div class="upload-prompt">
+                            <div class="upload-icon">📁</div>
+                            <span>Drag & drop files here or</span>
+                            <button type="button" class="browse-button">Browse Files</button>
+                        </div>
+                    </div>
+                    <div id="fileList" class="file-list"></div>
+                    <button type="submit" class="upload-button">
+                        <span class="button-icon">⬆️</span>
+                        Upload Files
+                    </button>
+                </form>
+                <div id="uploadProgress" class="upload-progress"></div>
+            </div>
+
+            <!-- User Management Section -->
+            <div class="admin-section user-management">
+                <div class="section-header">
+                    <h3>User Management</h3>
+                    <span class="section-description">Manage user accounts and permissions</span>
+                </div>
+                <div class="add-user-form">
+                    <h4>Add New User</h4>
+                    <form id="addUserForm">
+                        <div class="form-group">
+                            <input type="text" id="newUsername" placeholder="Username" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" id="newPassword" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="newRole">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="add-user-button">
+                            <span class="button-icon">➕</span>
+                            Add User
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="user-list">
+                    <h4>Existing Users</h4>
+                    <div id="usersList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html> 

@@ -1,0 +1,123 @@
+.random-mode {
+    overflow: hidden;
+}
+
+.random-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: var(--primary-hover);
+}
+
+.random-viewer {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: var(--bg-color);
+}
+
+.media-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.media-container img,
+.media-container video {
+    max-height: 85vh;
+    max-width: 90vw;
+    object-fit: contain;
+}
+
+.controls-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-button, .download-button-random {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-button:hover, 
+.download-button-random:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Animation classes remain the same */
+.slide-out-left {
+    animation: slideOutLeft 0.3s forwards;
+}
+
+.slide-out-right {
+    animation: slideOutRight 0.3s forwards;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.3s forwards;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.3s forwards;
+}
+
+@keyframes slideOutLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+@keyframes slideOutRight {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+} 

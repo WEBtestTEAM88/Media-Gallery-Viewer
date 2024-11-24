@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Enhanced Navigation Bar -->
+        <nav class="main-nav">
+            <div class="nav-header">
+                <h2>Media Gallery</h2>
+                <div class="nav-stats">
+                    <span id="totalFiles">Total Files: 0</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="random.html" class="nav-button random-button">
+                    <span class="button-icon">🎲</span>
+                    Random Mode
+                </a>
+                <button id="uploadBtn" class="nav-button upload-button">
+                    <span class="button-icon">⬆️</span>
+                    Upload Files
+                </button>
+                <button id="changePasswordBtn" class="nav-button settings-button">
+                    <span class="button-icon">🔑</span>
+                    Change Password
+                </button>
+                <button id="logoutBtn" class="nav-button logout-button">
+                    <span class="button-icon">↪</span>
+                    Logout
+                </button>
+            </div>
+        </nav>
+
+        <!-- Enhanced Filter Section -->
+        <div class="filter-section">
+            <div class="section-header">
+                <h3>Filters</h3>
+                <span class="section-description">Sort and filter your media files</span>
+            </div>
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="typeFilter">File Type:</label>
+                    <select id="typeFilter">
+                        <option value="all">All Files</option>
+                        <option value="image">Images</option>
+                        <option value="video">Videos</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="dateFilter">Sort by:</label>
+                    <select id="dateFilter">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="random">Random</option>
+                    </select>
+                </div>
+                <div class="filter-group search-group">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Search files...">
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div class="gallery-section">
+            <div class="section-header">
+                <h3>Media Files</h3>
+                <span class="section-description">Your gallery content</span>
+            </div>
+            <div id="gallery" class="gallery">
+                <!-- Gallery content will be loaded dynamically -->
+            </div>
+            <div id="pagination" class="pagination">
+                <!-- Pagination controls will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Password Change Modal -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <h2>Change Password</h2>
+            <form id="changePasswordForm">
+                <div class="form-group">
+                    <input type="password" id="currentPassword" placeholder="Current Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="newPassword" placeholder="New Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirm New Password" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="submit" class="submit-button">Change Password</button>
+                    <button type="button" class="cancel-button" id="cancelPasswordChange">Cancel</button>
+                </div>
+            </form>
+            <div id="passwordError" class="error-message"></div>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <h2>Submit Files for Approval</h2>
+            <form id="uploadForm" class="upload-form">
+                <div class="upload-area" id="dropZone">
+                    <input type="file" id="fileInput" multiple accept="image/*,video/*" style="display: none;">
+                    <div class="upload-prompt">
+                        <span>Drag & drop files here or</span>
+                        <button type="button" class="browse-button">Browse Files</button>
+                    </div>
+                </div>
+                <div id="fileList" class="file-list"></div>
+                <div class="modal-buttons">
+                    <button type="submit" class="submit-button">Submit Files</button>
+                    <button type="button" class="cancel-button" id="cancelUpload">Cancel</button>
+                </div>
+            </form>
+            <div id="uploadProgress" class="upload-progress"></div>
+        </div>
+    </div>
+
+    <!-- Add this before the closing body tag -->
+    <div id="previewModal" class="modal preview-modal">
+        <div class="preview-content">
+            <button class="close-preview">×</button>
+            <div class="preview-media-container"></div>
+            <div class="preview-info">
+                <div class="preview-name"></div>
+                <a class="preview-download download-button">Download</a>
+            </div>
+            <button class="preview-nav prev">❮</button>
+            <button class="preview-nav next">❯</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
